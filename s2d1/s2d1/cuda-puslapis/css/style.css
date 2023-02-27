@@ -1,5 +1,6 @@
 *,
-*::before *::after {
+*::before 
+*::after {
     box-sizing: border-box;
 }
 
@@ -22,7 +23,7 @@ body {
 
 .container {
     max-width: 1140px;
-    margin: auto;
+    margin:0 auto;
     padding: 0 20px;
 }
 
@@ -54,6 +55,9 @@ body {
     background-color: #643a79;
     border-radius: 5px;
 }
+.mobile-nav{
+    display: none;
+}
 
 .logo {
     padding: 55px 0;
@@ -68,13 +72,15 @@ body {
 
 }
 
-section>.container {
+section > .container {
     padding: 120px 0;
 }
 .hero h1 {
     color: #f7f3ea;
     font-size: 2.625rem;
     line-height: 1.1428;
+    max-width:843px;
+    margin:0 auto;
 }
 .hero a, .contact .btn {
     color: white;
@@ -138,7 +144,7 @@ section>.container {
     font-weight: 600;
 }
 
-.service p {
+.section-content p {
     font-size: 1rem;
     line-height: 1.5;
     font-weight: 300;
@@ -203,8 +209,9 @@ border-radius: 5px;
 }
 .contact .btn {
     margin: 60px auto 0;
-    width: 300px;
     display: block;
+    width: 300px;
+    
 }
 /*footer*/
 .footer{
@@ -226,4 +233,85 @@ list-style: none;
 }
 .footer ul li a:hover{
     color: #30bae7;
+}
+@media all and (max-width :980px) {
+    .main-nav{
+        display: none;
+
+    }
+    .site-header .container {
+        display: block;
+    }
+    .logo{
+        float: left;
+    }
+    .mobile-nav{
+        position: relative;
+        width: 100%;
+        display: block;
+    }
+    .mobile-nav li{
+        list-style: none;
+        
+    }
+    .mobile-nav ul{
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 133px;
+        padding: 20px;
+        background-color: white;
+    }
+    .mobile-nav a {
+        color: #3c4761;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin: 0 5px;
+        padding: 10px 17px;
+        display: block;
+    }
+    .mobile-nav a:hover, .main-nav a:active {
+        background-color: #643a79;
+        color: white;
+        border-radius: 5px;
+    }
+    .mobile-nav a.icon{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        color: white;
+    }
+    .services .section-content{
+        flex-direction: column;
+    }
+    .service{
+        max-width: 90%;
+    }
+    .footer ul {
+        padding-left: 0;
+
+    }
+}
+@media all and (max-width: 640px) {
+    .footer-nav .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media all and (max-width:414px) {
+    section > .container{
+        padding: 70px 0;
+    }
+    .container{
+        padding: 0 20px;
+    }
+    .hero h1{
+        font-size: 2.3rem;
+    }
+    .section-heading h2 {
+        font-size: 2.2rem;
+    }
 }
